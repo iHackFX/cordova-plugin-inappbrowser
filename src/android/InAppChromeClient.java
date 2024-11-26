@@ -24,6 +24,7 @@ import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.JsPromptResult;
@@ -43,6 +44,12 @@ public class InAppChromeClient extends VideoEnabledWebChromeClient {
         super(activityNonVideoView, activityVideoView);
         this.webView = webView;
     }
+
+    @Override
+    public Bitmap getDefaultVideoPoster(){
+            return Bitmap.createBitmap(10,10, Bitmap.Config.ARGB_8888);
+    }
+
     /**
      * Handle database quota exceeded notification.
      *
